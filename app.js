@@ -6,7 +6,7 @@ const posts = [
     avatar: "images/avatar-vangogh.jpg",
     post: "images/post-vangogh.jpg",
     comment: "just took a few mushrooms lol",
-    likes: 21,
+    likes: 241,
   },
   {
     name: "Gustave Courbet",
@@ -28,3 +28,50 @@ const posts = [
     likes: 152,
   },
 ];
+
+const containerEl = document.querySelector(".container");
+
+function renderPost(post) {
+  const {
+    name,
+    username,
+    location,
+    avatar,
+    post: postImage,
+    comment,
+    likes,
+  } = post;
+
+  const postDiv = document.createElement("div");
+  postDiv.classList.add("post");
+  const postHTML = `
+          <div class="post__author">
+          <img class="user-avatar" src="${avatar}" />
+          <p class="post__author-name">
+            ${name}
+            <span class="post__author-location">${location}</span>
+          </p>
+        </div>
+        <div class="post__img">
+          <img src="${postImage}" />
+        </div>
+        <div class="post__stats">
+          <div class="icons">
+            <img class="icon" src="./images/icon-heart.png" />
+            <img class="icon" src="./images/icon-comment.png" />
+            <img class="icon" src="./images/icon-dm.png" />
+          </div>
+          <p class="post__author__likes">${likes} likes</p>
+          <p>
+            <span class="post__author__username">${username}</span> ${comment}
+          </p>
+        </div>
+  `;
+
+  postDiv.innerHTML = postHTML;
+  containerEl.append(postDiv);
+}
+
+for (const post of posts) {
+  renderPost(post);
+}
