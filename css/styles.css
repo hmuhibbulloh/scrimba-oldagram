@@ -9,6 +9,15 @@ body {
     system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background-color: #eee;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  font-size: 12px;
 }
 
 .logo {
@@ -17,18 +26,58 @@ body {
 }
 
 .user-avatar {
-  height: 32px;
+  height: 34px;
   border-radius: 100%;
 }
 
 .container {
-  max-width: 340px;
+  width: 100%;
+  max-width: 350px;
   margin: 0 auto;
 }
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
   padding: 8px 16px;
+  border-bottom: 1px solid #ccc;
+}
+
+.post {
+  background-color: #fff;
+}
+
+.post__author {
+  padding: 8px 16px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+
+.post__author-name {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.post__author-location {
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.post__stats {
+  padding: 8px 16px;
+}
+
+.icon {
+  height: 30px;
+  margin-right: 8px;
+}
+
+.post__author__likes,
+.post__author__username {
+  font-weight: bold;
 }
